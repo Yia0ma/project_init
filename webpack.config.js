@@ -12,5 +12,13 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, "src/index.html")
         })
-    ]
+    ],
+    module: {
+        rules: [
+            {
+                test: /\.s[ac]ss$/,
+                use: ["style-loader", "css-loader", "sass-loader"]
+            }
+        ]
+    }
 }
